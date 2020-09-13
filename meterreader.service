@@ -1,0 +1,12 @@
+[Unit]
+Description=Meter Reader
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/meterreader
+Restart=on-failure
+User=root
+ExecStart=/usr/local/bin/meterreader
+
+[Install]
+WantedBy=multi-user.target
